@@ -4,13 +4,13 @@ using UnityEngine.Events;
 
 public class Game : MonoBehaviour
 {
+    public event UnityAction AllEnemyDied;
+
     [SerializeField] private GameOverScreen _gameOverScreen;
     [SerializeField] private Player _player;
     [SerializeField] private List<Enemy> _enemies;
 
-    private int _dyedEnemiesCount;
-
-    public event UnityAction AllEnemyDied;
+    private int _diedEnemies;
 
     private void OnEnable()
     {
@@ -28,19 +28,11 @@ public class Game : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        foreach (var enemy in _enemies)
-        {
-            enemy.Init(_player);
-        }
-    }
-
     private void OnEnemyDyed()
     {
-        _dyedEnemiesCount++;
+        _diedEnemies++;
 
-        if (_dyedEnemiesCount >= _enemies.Count)
+        if (_diedEnemies >= _enemies.Count)
             AllEnemyDied?.Invoke();
     }
 }

@@ -6,9 +6,14 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
-        float deltaX = Input.GetAxis("Horizontal") * _speed * Time.deltaTime;
-        float deltaY = Input.GetAxis("Vertical") * _speed * Time.deltaTime;
+        float deltaX = GetAxis("Horizontal");
+        float deltaY = GetAxis("Vertical");
 
         transform.Translate(deltaX, deltaY, 0);
+    }
+
+    private float GetAxis(string axis)
+    {
+        return Input.GetAxis(axis) * _speed * Time.deltaTime;
     }
 }

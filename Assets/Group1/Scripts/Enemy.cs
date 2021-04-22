@@ -3,11 +3,10 @@ using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _deathRange;
-
     public event UnityAction EnemyDyed;
 
-    private Player _player;
+    [SerializeField] private float _deathRange;
+    [SerializeField] private Player _player;
 
     private void Update()
     {
@@ -15,11 +14,6 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
-    }
-
-    public void Init(Player player)
-    {
-        _player = player;
     }
 
     private void Die()
