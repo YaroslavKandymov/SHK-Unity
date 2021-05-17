@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
 
     [SerializeField] private GameOverScreen _gameOverScreen;
     [SerializeField] private Player _player;
+    [SerializeField] private PlayerMover _playerMover;
     [SerializeField] private List<Enemy> _enemies;
 
     private int _diedEnemies;
@@ -16,7 +17,7 @@ public class Game : MonoBehaviour
     {
         foreach (var enemy in _enemies)
         {
-            enemy.EnemyDyed += OnEnemyDyed;
+            enemy.Dyed += OnDyed;
         }
     }
 
@@ -24,13 +25,14 @@ public class Game : MonoBehaviour
     {
         foreach (var enemy in _enemies)
         {
-            enemy.EnemyDyed -= OnEnemyDyed;
+            enemy.Dyed -= OnDyed;
         }
     }
 
-    private void OnEnemyDyed()
+    private void OnDyed()
     {
         _diedEnemies++;
+        _playerMover.IncreaseSpeed();
 
         if (_diedEnemies >= _enemies.Count)
             AllEnemyDied?.Invoke();

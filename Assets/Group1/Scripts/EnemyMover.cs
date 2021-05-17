@@ -2,14 +2,14 @@
 
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] private int _distance;
+    [SerializeField] private int _radius;
     [SerializeField] private float _speed;
 
     private Vector3 _target;
 
     private void Start()
     {
-        SetRandomTarget();
+        ChangeTarget();
     }
 
     private void Update()
@@ -17,11 +17,11 @@ public class EnemyMover : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
 
         if (transform.position == _target)
-            SetRandomTarget();
+            ChangeTarget();
     }
 
-    private void SetRandomTarget()
+    private void ChangeTarget()
     {
-        _target = Random.insideUnitCircle * _distance;
+        _target = Random.insideUnitCircle * _radius;
     }
 }

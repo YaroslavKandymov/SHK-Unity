@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-    public event UnityAction EnemyDyed;
+    public event UnityAction Dyed;
 
     [SerializeField] private float _deathRange;
     [SerializeField] private Player _player;
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        EnemyDyed?.Invoke();
+        Dyed?.Invoke();
 
         Destroy(gameObject);
     }

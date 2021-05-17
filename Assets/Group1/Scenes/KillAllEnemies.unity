@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathRange: 0.5
+  _player: {fileID: 1761935013}
 --- !u!114 &141422277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f7df4705b7dae48944a39b48934484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: 4
+  _radius: 4
   _speed: 2
 --- !u!212 &141422278
 SpriteRenderer:
@@ -421,6 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverScreen: {fileID: 1054253065}
   _player: {fileID: 1761935013}
+  _playerMover: {fileID: 1761935012}
   _enemies:
   - {fileID: 2083640149}
   - {fileID: 1754708961}
@@ -554,6 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathRange: 0.5
+  _player: {fileID: 1761935013}
 --- !u!114 &1578050038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f7df4705b7dae48944a39b48934484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: 4
+  _radius: 4
   _speed: 2
 --- !u!212 &1578050039
 SpriteRenderer:
@@ -664,6 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathRange: 0.5
+  _player: {fileID: 1761935013}
 --- !u!114 &1754708962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f7df4705b7dae48944a39b48934484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: 4
+  _radius: 4
   _speed: 2
 --- !u!212 &1754708963
 SpriteRenderer:
@@ -838,6 +842,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
+  _speedModifier: 5
+  _maxBoostedSpeedTime: 2
 --- !u!114 &1761935013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,6 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathRange: 0.5
+  _player: {fileID: 1761935013}
 --- !u!114 &2083640150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,5 +965,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f7df4705b7dae48944a39b48934484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: 4
+  _radius: 4
   _speed: 2
