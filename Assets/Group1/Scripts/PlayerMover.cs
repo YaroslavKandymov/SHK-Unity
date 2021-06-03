@@ -34,20 +34,9 @@ public class PlayerMover : MonoBehaviour
 
     private IEnumerator ResetSpeed()
     {
-        var boostedSpeedTime = _maxBoostedSpeedTime;
+        yield return new WaitForSeconds(_maxBoostedSpeedTime);
 
-        while (_speedIncreased)
-        {
-            boostedSpeedTime -= Time.deltaTime;
-
-            if (boostedSpeedTime <= 0)
-            {
-                boostedSpeedTime = _maxBoostedSpeedTime;
-                _speed -= _speed;
-                _speedIncreased = false;
-            }
-
-            yield return null;
-        }
+        _speed -= _speed;
+        _speedIncreased = false;
     }
 }

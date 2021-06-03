@@ -4,7 +4,7 @@
 public class GameOverScreen : MonoBehaviour
 {
     [SerializeField] private Game _game;
-    [SerializeField] private Color _targetColor;
+    [SerializeField] private Color _targetAlpha;
 
     private SpriteRenderer _spriteRenderer;
 
@@ -26,6 +26,6 @@ public class GameOverScreen : MonoBehaviour
     private void OnAllEnemyDied()
     {
         Time.timeScale = 0;
-        _spriteRenderer.color = _targetColor;
+        _spriteRenderer.color = _targetAlpha;
     }
 }

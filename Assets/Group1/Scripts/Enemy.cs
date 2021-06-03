@@ -1,24 +1,12 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
 
-public class Enemy : MonoBehaviour
+public class Enemy : SceneUnits
 {
-    public event UnityAction Dyed;
+    public event UnityAction Died;
 
-    [SerializeField] private float _deathRange;
-    [SerializeField] private Player _player;
-
-    private void Update()
+    public void Die()
     {
-        if (Vector3.Distance(_player.transform.position, transform.position) < _deathRange)
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        Dyed?.Invoke();
+        Died?.Invoke();
 
         Destroy(gameObject);
     }

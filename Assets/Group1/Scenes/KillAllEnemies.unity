@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathRange: 0.5
-  _player: {fileID: 1761935013}
 --- !u!114 &141422277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _game: {fileID: 534669906}
-  _targetColor: {r: 0, g: 0, b: 0, a: 1}
+  _targetAlpha: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1578050036
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +555,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathRange: 0.5
-  _player: {fileID: 1761935013}
 --- !u!114 &1578050038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathRange: 0.5
-  _player: {fileID: 1761935013}
 --- !u!114 &1754708962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,7 +839,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _speedModifier: 5
   _maxBoostedSpeedTime: 2
 --- !u!114 &1761935013
 MonoBehaviour:
@@ -952,7 +948,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathRange: 0.5
-  _player: {fileID: 1761935013}
 --- !u!114 &2083640150
 MonoBehaviour:
   m_ObjectHideFlags: 0
