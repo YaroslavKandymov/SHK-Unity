@@ -1,6 +1,7 @@
-﻿using UnityEngine.Events;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
-public class Enemy : SceneUnits
+public class Enemy : CollectedObjects
 {
     public event UnityAction Died;
 

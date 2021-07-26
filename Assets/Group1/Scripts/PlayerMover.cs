@@ -6,37 +6,33 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _maxBoostedSpeedTime;
 
-    private bool _speedIncreased;
+    private const string Horizontal = "Horizontal";
+    private const string Vertical = "Vertical";
 
     private void Update()
     {
-        float deltaX = GetAxis("Horizontal");
-        float deltaY = GetAxis("Vertical");
+        float deltaX = GetDirection(Horizontal);
+        float deltaY = GetDirection(Vertical);
 
         transform.Translate(deltaX, deltaY, 0);
     }
 
     public void IncreaseSpeed()
     {
-        if(_speedIncreased)
-            return;
-
-        _speedIncreased = true;
-        _speed += _speed;
-
         StartCoroutine(ResetSpeed());
     }
 
-    private float GetAxis(string axis)
+    private float GetDirection(string axis)
     {
         return Input.GetAxis(axis) * _speed * Time.deltaTime;
     }
 
     private IEnumerator ResetSpeed()
     {
+        _speed += _speed;
+
         yield return new WaitForSeconds(_maxBoostedSpeedTime);
 
         _speed -= _speed;
-        _speedIncreased = false;
     }
 }

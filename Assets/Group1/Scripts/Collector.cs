@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Object = UnityEngine.Object;
 
-public class Game : MonoBehaviour
+public class Collector : MonoBehaviour
 {
     [SerializeField] private GameOverScreen _gameOverScreen;
     [SerializeField] private Player _player;
@@ -34,26 +33,26 @@ public class Game : MonoBehaviour
 
     private void Update()
     {
-        KillEnemy();
+        DestroyEnemy();
 
-        AbsorbBooster();
+        CollectBooster();
     }
 
-    private void KillEnemy()
+    private void DestroyEnemy()
     {
         foreach (var enemy in _enemies)
-            CallByDistance(enemy, () => enemy.Die());
+            CallByRange(enemy, () => enemy.Die());
     }
 
-    private void AbsorbBooster()
+    private void CollectBooster()
     {
         foreach (var booster in _boosters)
-            CallByDistance(booster, () => _playerMover.IncreaseSpeed());
+            CallByRange(booster, () => _playerMover.IncreaseSpeed());
     }
 
-    private void CallByDistance(SceneUnits unit, Action callback)
+    private void CallByRange(CollectedObjects collectedObjects, Action callback)
     {
-        if (Vector3.Distance(_player.transform.position, unit.transform.position) < unit.Range)
+        if (Vector3.Distance(_player.transform.position, collectedObjects.transform.position) < collectedObjects.Range)
                 callback?.Invoke();
     }
 

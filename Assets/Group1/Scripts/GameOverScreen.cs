@@ -3,7 +3,7 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class GameOverScreen : MonoBehaviour
 {
-    [SerializeField] private Game _game;
+    [SerializeField] private Collector _collector;
     [SerializeField] private Color _targetAlpha;
 
     private SpriteRenderer _spriteRenderer;
@@ -15,12 +15,12 @@ public class GameOverScreen : MonoBehaviour
 
     private void OnEnable()
     {
-        _game.AllEnemyDied += OnAllEnemyDied;
+        _collector.AllEnemyDied += OnAllEnemyDied;
     }
 
     private void OnDisable()
     {
-        _game.AllEnemyDied -= OnAllEnemyDied;
+        _collector.AllEnemyDied -= OnAllEnemyDied;
     }
 
     private void OnAllEnemyDied()

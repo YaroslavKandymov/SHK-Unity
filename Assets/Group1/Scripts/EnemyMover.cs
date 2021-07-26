@@ -9,7 +9,7 @@ public class EnemyMover : MonoBehaviour
 
     private void Start()
     {
-        AssignRandomTarget();
+        PasteRandomTarget();
     }
 
     private void Update()
@@ -17,10 +17,10 @@ public class EnemyMover : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
 
         if (transform.position == _target)
-            AssignRandomTarget();
+            PasteRandomTarget();
     }
 
-    private void AssignRandomTarget()
+    private void PasteRandomTarget()
     {
         _target = Random.insideUnitCircle * _radius;
     }

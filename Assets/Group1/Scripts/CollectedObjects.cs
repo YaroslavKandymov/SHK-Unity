@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class SceneUnits : MonoBehaviour
+public class CollectedObjects : MonoBehaviour
 {
     [SerializeField] private float _range;
 

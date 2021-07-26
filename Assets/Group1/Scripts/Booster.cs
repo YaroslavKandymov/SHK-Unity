@@ -1,3 +1,5 @@
-﻿public class Booster : SceneUnits
+﻿using UnityEngine;
+
+public class Booster : CollectedObjects
 {
 }
